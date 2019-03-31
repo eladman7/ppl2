@@ -49,7 +49,11 @@
 
 (define append3
   (lambda (lst1 lst2 num)
-       @TODO
+   (if (empty? lst1)
+           (if (empty? lst2)
+               (cons num '())
+               (cons (car lst2) (append3 lst1 (cdr lst2) num)))
+           (cons (car lst1) (append3 (cdr lst1) lst2 num)))
     )
 )
 
